@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      args:
+        - APP_SETTINGS=app.config.TestingConfig
+    command: bash -c "py.test"
+    environment:
+      - APP_SETTINGS=app.config.TestingConfig

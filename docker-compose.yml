@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      args:
+        - FLASK_APP=wsgi.py
+    ports:
+      - "80:80"
+    command: flask run -h 0.0.0.0 -p 80 --no-reload --no-debugger
+    environment:
+      - FLASK_APP=wsgi.py
